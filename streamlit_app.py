@@ -33,6 +33,7 @@ if st.button("Download Afbeeldingen"):
         st.write("Downloadproces gestart...")
         
         driver = get_driver()
+        driver.set_page_load_timeout(10)  # Wacht maximaal 30 seconden
         driver.get(url)
     
         # Toon de HTML van de pagina
