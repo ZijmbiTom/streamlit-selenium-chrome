@@ -26,9 +26,15 @@ with st.echo():
     options.add_argument("--disable-gpu")
     options.add_argument("--headless")
 
-    driver = get_driver()
-    driver.get(url)
+    # Knop om het downloaden te starten
+    if st.button("Download Afbeeldingen"):
+        if url:
+            st.write("Downloadproces gestart...")
+            
+            driver = get_driver()
+            driver.get(url)
+        
+            st.code(driver.page_source)
 
-    st.code(driver.page_source)
-
-
+    else:
+        st.warning("Voer een geldige URL in voordat je op 'Download Afbeeldingen' klikt.")
