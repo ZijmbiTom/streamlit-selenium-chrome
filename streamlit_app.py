@@ -1,5 +1,4 @@
 import streamlit as st
-import time 
 
 # Titel van de applicatie
 st.title("Afbeelding downloader")
@@ -29,9 +28,6 @@ with st.echo():
 
     driver = get_driver()
     driver.get(url)
-
-    # Wacht een paar seconden zodat de pagina volledig kan laden
-    time.sleep(5)
 
     st.code(driver.page_source)
 
